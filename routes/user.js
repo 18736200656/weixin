@@ -72,6 +72,7 @@ router.get('/info', async (req, res, next) => {
 
 router.get('/all', async (req, res, next) => {
 	const {limit = 20, offset = 0} = req.query;
+	const {limit = 20, offset = 0} = req.query;
 	try{
 		const users = await UserModel.find({}, '-_id -__v').skip(Number(offset)).limit(Number(limit));
 		res.send({
